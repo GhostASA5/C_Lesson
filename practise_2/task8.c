@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 
 typedef union {
@@ -13,30 +12,25 @@ int main() {
     int n;
     scanf("%d", &n);
 
-    Grade grades;
+    Grade* grades = (Grade *) malloc(sizeof(Grade));
 
     for (int i = 0; i < n; i++) {
-        char input;
-        scanf("%c", input);
+        char input[5];
+        scanf("%s", input);
 
-        if (isdigit(input)) {
-            grades.numericGrade = input;
+        if (input[0] >= '0' && input[0] <= '9') {
+            grades[i].numericGrade = atoi(input);
         } else {
-            grades.letterGrade = input;
+            grades[i].letterGrade = input[0];
         }
     }
 
-    // Условие не понятно. Как можно записать два значения,
-    // сохранить их в одно объединение и потом вывести эти значения?
-    // В объединении по определению можно хранить только одно значение в
-    // один момент времени
-
-//    for (int i = 0; i < n; i++) {
-//        if (isdigit()) {
-//            printf("Grade: %d\n", grades[i].numericGrade);
-//        } else {
-//            printf("Grade: %s\n", grades[i].letterGrade);
-//        }
-//    }
+    for (int i = 0; i < n; i++) {
+        if (grades[i].numericGrade >= 0 && grades[i].numericGrade <= 100) {
+            printf("Grade: %d\n", grades[i].numericGrade);
+        } else {
+            printf("Grade: %c\n", grades[i].letterGrade);
+        }
+    }
 
 }
