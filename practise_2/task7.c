@@ -25,4 +25,5 @@ int main() {
         printf("GPA: %.2f\n\n", studentPtr->gpa);
     }
 
+    free(students);
 }

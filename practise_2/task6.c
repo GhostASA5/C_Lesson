@@ -33,4 +33,5 @@ int main() {
         printf("Engine Type: %u\n\n", vehicles[i].engineType);
     }
 
+    free(vehicles);
 }

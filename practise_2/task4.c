@@ -25,4 +25,5 @@ int main() {
         printf("Salary: %.2f\n\n", employees[i].salary);
     }
 
+    free(employees);
 }

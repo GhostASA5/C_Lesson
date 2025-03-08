@@ -39,4 +39,6 @@ int main() {
             break;
     }
 
+    free(data);
+
 }

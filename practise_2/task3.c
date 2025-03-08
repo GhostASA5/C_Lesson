@@ -31,4 +31,5 @@ int main() {
         printf("Description: %s\n\n", events[i].description);
     }
 
+    free(events);
 }

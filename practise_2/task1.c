@@ -23,4 +23,6 @@ int main() {
         printf("Age: %d\n", students[i].age);
         printf("GPA: %.2f\n\n", students[i].gpa);
     }
+
+    free(students);
 }

@@ -25,4 +25,5 @@ int main() {
         printf("Price: %.2f\n\n", items[i].price);
     }
 
+    free(items);
 }

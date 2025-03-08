@@ -25,4 +25,5 @@ int main() {
         printf("Professor: %s\n\n", courses[i].professor);
     }
 
+    free(courses);
 }
